@@ -77,7 +77,7 @@ codeFile model
 ```javascript
 {
   language: {
-    type: String,
+    type: [String],
     required: true,
   },
   title: {
@@ -85,7 +85,7 @@ codeFile model
     required: true,
   },
   code: {
-    type: String,
+    type: [id],
     required: true,
   },
   image: {
@@ -95,9 +95,30 @@ codeFile model
 }
 ```
 
+compile model
+
+```javascript
+{
+  language: {
+    type: [String],
+    required: true,
+  },
+  code: {
+    type: [id],
+    required: true,
+  }
+}
+```
+
 ## API's
 
 ## Packages
+
+ExpressJS
+
+NodeJS
+
+MongoDB
 
 ## Backlog
 
