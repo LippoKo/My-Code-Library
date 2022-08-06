@@ -72,7 +72,7 @@ User model
 }
 ```
 
-codeFile model
+CodeFile model
 
 ```javascript
 {
@@ -95,7 +95,7 @@ codeFile model
 }
 ```
 
-compile model
+Compile model
 
 ```javascript
 {

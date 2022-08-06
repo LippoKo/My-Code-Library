@@ -31,7 +31,7 @@ router.post("/signup", isLoggedOut, (req, res, next) => {
 		.then((hashedPassword) => {
 			return User.create({ username, email, password: hashedPassword });
 		})
-		.then(() => res.redirect("/auth/login"))
+		.then(() => res.redirect("/login"))
 		.catch((err) => {
 			if (err instanceof mongoose.Error.ValidationError) {
 				console.log(err);
