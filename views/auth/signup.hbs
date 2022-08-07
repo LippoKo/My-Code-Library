@@ -21,9 +21,9 @@
 	<button type="submit">Submit</button>
 </form>
 
-<a href="/auth/login">Login</a>
-<a href="/">Home</a>
+<a href="/auth/login"><strong>Login</strong></a>
+<a href="/"><strong>Home</strong></a>
 
 {{#if errorMessage}}
-	{{errorMessage}}
+	<p class="error">{{errorMessage}}</p>
 {{/if}}

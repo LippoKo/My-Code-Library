@@ -1,4 +1,7 @@
-{{!-- this file is only shown whenever there is an error during log out --}}
+<form action="/auth/logout" method="POST">
+	<button>Logout</button>
+</form>
+
 {{#if errorMessage}}
-    {{errorMessage}}
+	<p class="error">{{errorMessage}}</p>
 {{/if}}
