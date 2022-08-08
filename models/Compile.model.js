@@ -3,11 +3,11 @@ const { Schema, model } = require("mongoose");
 const compileSchema = new Schema(
 	{
 		language: {
-			type: [String],
+			type: String,
 			required: true,
 		},
 		code: {
-			type: [id],
+			type: String,
 			required: true,
 		},
 	},

@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const codeFileSchema = new Schema(
 	{
-		language: {
+		languages: {
 			type: [String],
 			required: true,
 		},
@@ -11,11 +11,10 @@ const codeFileSchema = new Schema(
 			required: true,
 		},
 		code: {
-			type: [id],
-			required: true,
+			type: [{ type: Schema.Types.ObjectId, ref: "Compile" }],
 		},
 		image: {
-			type: [String],
+			type: String,
 			default: "",
 		},
 	},
@@ -24,6 +23,6 @@ const codeFileSchema = new Schema(
 	}
 );
 
-const User = model("CodeFile", userSchema);
+const CodeFile = model("CodeFile", codeFileSchema);
 
 module.exports = CodeFile;

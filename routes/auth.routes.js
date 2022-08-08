@@ -1,5 +1,4 @@
 // Require
-
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
@@ -29,7 +28,7 @@ router.post("/signup", isLoggedOut, (req, res, next) => {
 	if (!username || !email || !password) {
 		res.render("auth/signup", {
 			errorMessage:
-				"All fields are mandatory. Please provide your username, email and password",
+				"All fields are mandatory. Please provide your username, email and password.",
 		});
 		return;
 	}
@@ -90,7 +89,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 		});
 	}
 
-	//// Search Username submitted in the database
+	// Search Username submitted in the database
 	User.findOne({ username })
 		.then((user) => {
 			if (!user) {
@@ -107,7 +106,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 					});
 				}
 				req.session.user = user;
-				return res.redirect("/");
+				return res.redirect("/workspace");
 			});
 		})
 		.catch((err) => {

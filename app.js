@@ -30,6 +30,15 @@ app.use("/", index);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
+const workspaceRoutes = require("./routes/workspace.routes");
+app.use("/", workspaceRoutes);
+
+const codeFileRoutes = require("./routes/codefile.routes");
+app.use("/", codeFileRoutes);
+
+const compileRoutes = require("./routes/compile.routes");
+app.use("/", compileRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

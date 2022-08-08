@@ -1,6 +1,6 @@
 /* Colors */
 :root {
-	--hue: 150;
+	--hue: 220;
 
 	--base-color: hsl(var(--hue) 100% 25%);
 	--body-color: hsl(var(--hue) 80% 80%);
@@ -19,11 +19,13 @@ body {
 	background-size: cover;
 }
 
+h1,
 h2,
-h1 {
+h3,
+h4,
+h5 {
 	display: flex;
 	justify-content: center;
-	padding: 50px;
 	color: var(--title-color);
 }
 
@@ -44,10 +46,8 @@ form {
 
 form label {
 	color: var(--text-color);
-	display: inline-block;
 	margin-bottom: 10px;
 	text-align: center;
-	width: 100%;
 }
 
 form input,
@@ -90,6 +90,12 @@ ul {
 
 ul li {
 	line-height: 20px;
+}
+
+.wrap-languages {
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
 }
 
 .error {

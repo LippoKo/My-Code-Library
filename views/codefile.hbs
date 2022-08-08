@@ -1,0 +1,90 @@
+<form action="/codefile" method="POST">
+	<h4>Title</h4>
+	<label>
+		<input type="text" name="title" />
+	</label>
+
+	<h4>Programming Languages</h4>
+	<div class="wrap-languages">
+		<label>
+			HTML5
+			<input type="checkbox" name="languages" value="HTML5" />
+		</label>
+
+		<label>
+			CSS3
+			<input type="checkbox" name="languages" value="CSS3" />
+		</label>
+
+		<label>
+			JavaScript
+			<input type="checkbox" name="languages" value="JAVASCRIPT" />
+		</label>
+
+		<label>
+			TypeScript
+			<input type="checkbox" name="languages" value="TYPESCRIPT" />
+		</label>
+
+		<label>
+			React
+			<input type="checkbox" name="languages" value="REACT" />
+		</label>
+
+		<label>
+			Python
+			<input type="checkbox" name="languages" value="PYTHON" />
+		</label>
+
+		<label>
+			Java
+			<input type="checkbox" name="languages" value="JAVA" />
+		</label>
+
+		<label>
+			C
+			<input type="checkbox" name="languages" value="C" />
+		</label>
+
+		<label>
+			C++
+			<input type="checkbox" name="languages" value="C++" />
+		</label>
+
+		<label>
+			C Sharp
+			<input type="checkbox" name="languages" value="C SHARP" />
+		</label>
+
+		<label>
+			Ruby
+			<input type="checkbox" name="languages" value="RUBY" />
+		</label>
+
+		<label>
+			PHP
+			<input type="checkbox" name="languages" value="PHP" />
+		</label>
+
+		<label>
+			GO
+			<input type="checkbox" name="languages" value="GO" />
+		</label>
+
+	</div>
+
+	{{! <label>
+		Image
+		<input type="file" name="image" />
+	</label> }}
+
+	<button type="submit">Submit</button>
+</form>
+
+<a href=""><strong>Edit File</strong></a>
+<a href=""><strong>Delete</strong></a>
+<a href="/"><strong>Home</strong></a>
+
+{{#if errorMessage}}
+	<p class="error">{{errorMessage}}</p>
+{{/if}}

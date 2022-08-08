@@ -1,0 +1,15 @@
+<h1>
+	{{title}}
+</h1>
+
+<form action="/compile" method="POST">
+
+	{{#each languages}}
+
+		<p>{{this}}</p>
+		<textarea name="{{this}}" id="" cols="30" rows="10"></textarea>
+
+	{{/each}}
+
+	<button type="submit">Submit</button>
+</form>
