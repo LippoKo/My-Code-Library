@@ -12,8 +12,8 @@ const storage = new CloudinaryStorage({
 	cloudinary,
 	params: {
 		allowed_formats: ["jpg", "png", "jpeg"],
-		//allowed_formats: 'movie-project',
-		//resource_type: 'raw'
+		folder: "code_file",
+		//resource_type: "raw",
 	},
 });
 

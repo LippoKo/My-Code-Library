@@ -1,82 +1,82 @@
-<form action="/codefile" method="POST">
-	<h4>Title</h4>
+<form action="/codefile" method="POST" enctype="multipart/form-data">
+	<h2>Title</h2>
 	<label>
 		<input type="text" name="title" />
 	</label>
 
-	<h4>Programming Languages</h4>
+	<h2>Programming Languages</h2>
 	<div class="wrap-languages">
 		<label>
-			HTML5
+			<strong>HTML</strong>
 			<input type="checkbox" name="languages" value="HTML5" />
 		</label>
 
 		<label>
-			CSS3
+			<strong>CSS</strong>
 			<input type="checkbox" name="languages" value="CSS3" />
 		</label>
 
 		<label>
-			JavaScript
+			<strong>JavaScript</strong>
 			<input type="checkbox" name="languages" value="JAVASCRIPT" />
 		</label>
 
 		<label>
-			TypeScript
+			<strong>TypeScript</strong>
 			<input type="checkbox" name="languages" value="TYPESCRIPT" />
 		</label>
 
 		<label>
-			React
+			<strong>React</strong>
 			<input type="checkbox" name="languages" value="REACT" />
 		</label>
 
 		<label>
-			Python
+			<strong>Python</strong>
 			<input type="checkbox" name="languages" value="PYTHON" />
 		</label>
 
 		<label>
-			Java
+			<strong>Java</strong>
 			<input type="checkbox" name="languages" value="JAVA" />
 		</label>
 
 		<label>
-			C
+			<strong>C</strong>
 			<input type="checkbox" name="languages" value="C" />
 		</label>
 
 		<label>
-			C++
+			<strong>C++</strong>
 			<input type="checkbox" name="languages" value="C++" />
 		</label>
 
 		<label>
-			C Sharp
+			<strong>C Sharp</strong>
 			<input type="checkbox" name="languages" value="C SHARP" />
 		</label>
 
 		<label>
-			Ruby
+			<strong>Ruby</strong>
 			<input type="checkbox" name="languages" value="RUBY" />
 		</label>
 
 		<label>
-			PHP
+			<strong>PHP</strong>
 			<input type="checkbox" name="languages" value="PHP" />
 		</label>
 
 		<label>
-			GO
+			<strong>GO</strong>
 			<input type="checkbox" name="languages" value="GO" />
 		</label>
 
 	</div>
 
-	{{! <label>
-		Image
-		<input type="file" name="image" />
-	</label> }}
+	<label for="image">
+		<strong>Image</strong>
+	</label>
+	<input type="file" name="image" />
 
 	<button type="submit">Submit</button>
 </form>

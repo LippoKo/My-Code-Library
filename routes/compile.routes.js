@@ -13,12 +13,17 @@ router.get("/compile/:id", isLoggedIn, (req, res, next) => {
 		.catch((err) => next(err));
 });
 
-router.post("/compile/:id", isLoggedIn, (req, res, nest) => {
+router.post("/compile/:id", isLoggedIn, (req, res, next) => {
 	const { id } = req.params;
 	const { language, code } = req.body;
 
-	console.log(req.body);
-	Compile.create({ id }, { language, code })
+	Compile.create({ language, code })
+		.then((compileFile) => {
+			console.log(compileFile);
+			return CodeFile.findByIdAndUpdate(id, {
+				$push: { code: compileFile._id },
+			});
+		})
 		.then(() => res.redirect("/workspace"))
 		.catch((err) => next(err));
 });

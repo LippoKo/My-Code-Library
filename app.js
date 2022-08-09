@@ -18,6 +18,10 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
+hbs.registerHelper("index_of", function (context, ndx) {
+	return context[ndx];
+});
+
 const capitalized = require("./utils/capitalized");
 const projectName = "Project2";
 

@@ -2,13 +2,15 @@
 	{{title}}
 </h1>
 
-<form action="/compile" method="POST">
+<form action="/compile/{{id}}" method="POST">
 
 	{{#each languages}}
-
-		<p>{{this}}</p>
-		<textarea name="{{this}}" id="" cols="30" rows="10"></textarea>
-
+		<div id="input-l">
+			<input id="input-l" name="language" value="{{this}}" readonly />
+		</div>
+		<div id="card-code">
+			<textarea name="code" cols="40" rows="12"></textarea>
+		</div>
 	{{/each}}
 
 	<button type="submit">Submit</button>

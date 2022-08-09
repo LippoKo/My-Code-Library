@@ -1,0 +1,15 @@
+<h1>{{newcodefile.title}}</h1>
+
+<div id="div-row">
+{{#each compileData.code}}
+<div id="codex">
+<h2>{{#index_of ../compileData.language @index}}{{/index_of}}</h2>
+<code id="card-result">{{this}}</code>
+</div>
+{{/each}}
+</div>
+
+<div id="image">
+<img  src="{{newcodefile.image}}" />
+</div>
+

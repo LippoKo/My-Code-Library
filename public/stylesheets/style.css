@@ -1,12 +1,12 @@
 /* Colors */
 :root {
-	--hue: 220;
+	--hue: 0;
 
 	--base-color: hsl(var(--hue) 100% 25%);
 	--body-color: hsl(var(--hue) 80% 80%);
 	--title-color: hsl(var(--hue) 90% 15%);
 	--text-color: hsl(0 0% 46%);
-	--background-color: hsl(0 0% 90%);
+	--background-color: hsl(0, 0%, 95%);
 	--error-color: hsl(342, 94%, 45%);
 }
 
@@ -92,6 +92,45 @@ ul li {
 	line-height: 20px;
 }
 
+p {
+	display: flex;
+	align-items: center;
+}
+
+#card-result {
+	display: flex;
+	text-align: center;
+	font-size: 1.2rem;
+	margin: 0.5rem;
+	padding: 1rem;
+	border: 0.1rem solid var(--base-color);
+	border-radius: 0.5rem;
+	background-color: var(--background-color);
+}
+
+#codex {
+	border: 0.1rem solid var(--base-color);
+	border-radius: 0.5rem;
+	margin: 1rem;
+}
+
+img {
+	width: 35rem;
+	height: 20rem;
+	border: 0.1rem solid var(--base-color);
+	border-radius: 0.5rem;
+}
+
+#image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#div-row {
+	display: flex;
+}
+
 .wrap-languages {
 	display: flex;
 	align-content: center;
@@ -106,4 +145,26 @@ ul li {
 	padding: 20px;
 	width: 100%;
 	border-radius: 5px;
+}
+
+#input-l {
+	display: flex;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	border: none;
+	background-color: var(--body-color);
+}
+
+#card-code {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+textarea {
+	border: none;
+	border-radius: 0.2rem;
+	background-color: var(--background-color);
 }

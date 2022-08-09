@@ -15,7 +15,7 @@ const codeFileSchema = new Schema(
 		},
 		image: {
 			type: String,
-			default: "",
+			//default: "../public/images/site_cleanup.jpg",
 		},
 	},
 	{

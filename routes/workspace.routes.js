@@ -8,7 +8,6 @@ router.get("/workspace", isLoggedIn, (req, res, next) => {
 	CodeFile.find().then((compileFile) => {
 		res.render("workspace", { compileFile });
 	});
-	res.render("workspace");
 });
 
 module.exports = router;
