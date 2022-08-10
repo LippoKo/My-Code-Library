@@ -2,7 +2,6 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const CodeFile = require("../models/CodeFile.model");
-const Compile = require("../models/Compile.model");
 
 router.get("/compile/:id", isLoggedIn, (req, res, next) => {
 	const { id } = req.params;
@@ -17,14 +16,20 @@ router.post("/compile/:id", isLoggedIn, (req, res, next) => {
 	const { id } = req.params;
 	const { language, code } = req.body;
 
-	Compile.create({ language, code })
-		.then((compileFile) => {
-			console.log(compileFile);
-			return CodeFile.findByIdAndUpdate(id, {
-				$push: { code: compileFile._id },
-			});
+	let snippets;
+	if (typeof language !== "string") {
+		snippets = language.map((el, i) => {
+			return { language: el, code: code[i] };
+		});
+	} else {
+		snippets = { language, code };
+	}
+
+	CodeFile.findByIdAndUpdate(id, { snippets })
+		.then((codeFile) => {
+			console.log(codeFile);
+			res.redirect("/workspace");
 		})
-		.then(() => res.redirect("/workspace"))
 		.catch((err) => next(err));
 });
 

@@ -1,7 +1,7 @@
 <form action="/codefile" method="POST" enctype="multipart/form-data">
 	<h2>Title</h2>
 	<label>
-		<input type="text" name="title" />
+		<input id="input-c" type="text" name="title" />
 	</label>
 
 	<h2>Programming Languages</h2>
@@ -81,8 +81,6 @@
 	<button type="submit">Submit</button>
 </form>
 
-<a href=""><strong>Edit File</strong></a>
-<a href=""><strong>Delete</strong></a>
 <a href="/"><strong>Home</strong></a>
 
 {{#if errorMessage}}

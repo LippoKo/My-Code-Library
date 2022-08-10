@@ -10,8 +10,13 @@ const codeFileSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		code: {
-			type: [{ type: Schema.Types.ObjectId, ref: "Compile" }],
+		snippets: {
+			type: [
+				{
+					language: String,
+					code: String,
+				},
+			],
 		},
 		image: {
 			type: String,

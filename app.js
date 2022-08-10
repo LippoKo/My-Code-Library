@@ -22,6 +22,13 @@ hbs.registerHelper("index_of", function (context, ndx) {
 	return context[ndx];
 });
 
+hbs.registerHelper(`includes`, function (a, b, opts) {
+	if (a.includes(b)) {
+		return opts.fn(this);
+	}
+	return opts.inverse(this);
+});
+
 const capitalized = require("./utils/capitalized");
 const projectName = "Project2";
 
@@ -42,6 +49,12 @@ app.use("/", codeFileRoutes);
 
 const compileRoutes = require("./routes/compile.routes");
 app.use("/", compileRoutes);
+
+const editRoutes = require("./routes/editcodefile.routes");
+app.use("/", editRoutes);
+
+const profileRoutes = require("./routes/profile.routes");
+app.use("/", profileRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

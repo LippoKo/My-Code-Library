@@ -1,0 +1,13 @@
+<form action="/editcompile/{{_id}}" method="POST">
+
+	{{#each snippets}}
+		<div id="input-l">
+			<input id="input-l" name="language" value="{{this.language}}" readonly />
+		</div>
+		<div id="card-code">
+			<textarea name="code" cols="40" rows="12">{{this.code}}</textarea>
+		</div>
+	{{/each}}
+
+	<button type="submit">Submit</button>
+</form>

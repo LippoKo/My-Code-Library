@@ -1,0 +1,127 @@
+<h1>Edit CodeFile</h1>
+
+<form action="/editcodefile/{{_id}}" method="post" enctype="multipart/form-data">
+  <h2>Title</h2>
+	<label>
+		<input id="input-c" type="text" name="title" value="{{title}}" />
+	</label>
+
+	<h2>Programming Languages</h2>
+	<div class="wrap-languages">
+		<label>
+			<strong>HTML</strong>
+			<input type="checkbox" name="languages" value="HTML5" 
+				{{#includes languages "HTML5"}}
+					checked
+				{{/includes}}
+			
+			/>
+		</label>
+
+		<label>
+			<strong>CSS</strong>
+			<input type="checkbox" name="languages" value="CSS3" 
+			{{#includes languages "CSS3"}}
+					checked
+				{{/includes}}
+			/>
+		</label>
+
+		<label>
+			<strong>JavaScript</strong>
+			<input type="checkbox" name="languages" value="JAVASCRIPT" 
+      {{#includes languages "JAVASCRIPT"}}
+					checked
+				{{/includes}}/>
+		</label>
+
+		<label>
+			<strong>TypeScript</strong>
+			<input type="checkbox" name="languages" value="TYPESCRIPT"
+      {{#includes languages "TYPESCRIPT"}}
+					checked
+				{{/includes}} />
+		</label>
+
+		<label>
+			<strong>React</strong>
+			<input type="checkbox" name="languages" value="REACT" 
+      {{#includes languages "REACT"}}
+					checked
+				{{/includes}}/>
+		</label>
+
+		<label>
+			<strong>Python</strong>
+			<input type="checkbox" name="languages" value="PYTHON"
+      {{#includes languages "PYTHON"}}
+					checked
+				{{/includes}} />
+		</label>
+
+		<label>
+			<strong>Java</strong>
+			<input type="checkbox" name="languages" value="JAVA"
+      {{#includes languages "JAVA"}}
+					checked
+				{{/includes}} />
+		</label>
+
+		<label>
+			<strong>C</strong>
+			<input type="checkbox" name="languages" value="C" 
+      {{#includes languages "C"}}
+					checked
+				{{/includes}}/>
+		</label>
+
+		<label>
+			<strong>C++</strong>
+			<input type="checkbox" name="languages" value="C++"
+      {{#includes languages "C++"}}
+					checked
+				{{/includes}} />
+		</label>
+
+		<label>
+			<strong>C Sharp</strong>
+			<input type="checkbox" name="languages" value="C SHARP"
+      {{#includes languages "C SHARP"}}
+					checked
+				{{/includes}} />
+		</label>
+
+		<label>
+			<strong>Ruby</strong>
+			<input type="checkbox" name="languages" value="RUBY"
+      {{#includes languages "RUBY"}}
+					checked
+				{{/includes}} />
+		</label>
+
+		<label>
+			<strong>PHP</strong>
+			<input type="checkbox" name="languages" value="PHP" 
+      {{#includes languages "PHP"}}
+					checked
+				{{/includes}}/>
+		</label>
+
+		<label>
+			<strong>GO</strong>
+			<input type="checkbox" name="languages" value="GO"
+      {{#includes languages "GO"}}
+					checked
+				{{/includes}} />
+		</label>
+
+	</div>
+
+	<label for="image">
+		<strong>Image</strong>
+	</label>
+	<input type="file" name="image" />
+	<input type="text" name="previousUrl" value="{{image}}" hidden />
+
+	<button type="submit">Submit</button>
+</form>

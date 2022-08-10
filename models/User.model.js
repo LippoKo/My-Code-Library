@@ -19,6 +19,16 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		profession: {
+			type: String,
+		},
+		interests: {
+			type: String,
+		},
+		image: {
+			type: String,
+			//default: "../public/images/site_cleanup.jpg",
+		},
 	},
 	{
 		timestamps: true,

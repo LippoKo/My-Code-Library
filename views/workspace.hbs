@@ -1,6 +1,13 @@
-<a href="/codeFile"><Strong>Create CodeFile</Strong></a>
+<nav id="header">
+	<a href="/codeFile"><Strong>Create CodeFile</Strong></a>
+	<a href="/profile/{{_id}}"><Strong>Profile</Strong></a>
+</nav>
 
-{{#each compileFile}}
-
-	<a href="/codefile/{{_id}}">{{title}}</a>
+{{#each codefile}}
+	<div id="card-principal">
+		<a href="/codefile/{{_id}}">{{title}}</a>
+		<p>{{languages}}</p>
+		<p>{{snippets}}</p>
+		<p>{{image}}</p>
+	</div>
 {{/each}}

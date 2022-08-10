@@ -1,15 +1,20 @@
-<h1>{{newcodefile.title}}</h1>
+<h1>{{title}}</h1>
 
 <div id="div-row">
-{{#each compileData.code}}
-<div id="codex">
-<h2>{{#index_of ../compileData.language @index}}{{/index_of}}</h2>
-<code id="card-result">{{this}}</code>
-</div>
-{{/each}}
+	{{#each snippets}}
+		<div id="codex">
+			<h2>{{this.language}}</h2>
+			<code id="card-result">{{this.code}}</code>
+		</div>
+	{{/each}}
 </div>
 
 <div id="image">
-<img  src="{{newcodefile.image}}" />
+	<img src="{{image}}" />
 </div>
 
+<a href="/editcodefile/{{_id}}"><strong>Edit File</strong></a>
+<form action="/codefile/{{_id}}/delete" method="POST">
+	<button>Delete</button>
+</form>
+<a href="/workspace">Workspace</a>
