@@ -1,87 +1,105 @@
-<form action="/codefile" method="POST" enctype="multipart/form-data">
-	<h2>Title</h2>
-	<label>
-		<input id="input-c" type="text" name="title" />
-	</label>
+<nav id="header">
+	<a href="/workspace"><strong>Workspace</strong></a>
+	<a href="/profile"><Strong>Profile</Strong></a>
+</nav>
 
-	<h2>Programming Languages</h2>
-	<div class="wrap-languages">
-		<label>
-			<strong>HTML</strong>
-			<input type="checkbox" name="languages" value="HTML5" />
-		</label>
+<section id="section-card">
+	<div class="artboard phone-5">
 
-		<label>
-			<strong>CSS</strong>
-			<input type="checkbox" name="languages" value="CSS3" />
-		</label>
+		<form
+			id="form-login"
+			action="/codefile"
+			method="POST"
+			enctype="multipart/form-data"
+		>
+			<h2>Title</h2>
+			<label>
+				<input id="input-c" type="text" name="title" />
+			</label>
 
-		<label>
-			<strong>JavaScript</strong>
-			<input type="checkbox" name="languages" value="JAVASCRIPT" />
-		</label>
+			<h2>Programming Languages</h2>
+			<div class="wrap-languages">
+				<label>
+					<strong>HTML</strong>
+					<input type="checkbox" name="languages" value="HTML5" />
+				</label>
 
-		<label>
-			<strong>TypeScript</strong>
-			<input type="checkbox" name="languages" value="TYPESCRIPT" />
-		</label>
+				<label>
+					<strong>CSS</strong>
+					<input type="checkbox" name="languages" value="CSS3" />
+				</label>
 
-		<label>
-			<strong>React</strong>
-			<input type="checkbox" name="languages" value="REACT" />
-		</label>
+				<label>
+					<strong>JavaScript</strong>
+					<input type="checkbox" name="languages" value="JAVASCRIPT" />
+				</label>
 
-		<label>
-			<strong>Python</strong>
-			<input type="checkbox" name="languages" value="PYTHON" />
-		</label>
+				<label>
+					<strong>TypeScript</strong>
+					<input type="checkbox" name="languages" value="TYPESCRIPT" />
+				</label>
 
-		<label>
-			<strong>Java</strong>
-			<input type="checkbox" name="languages" value="JAVA" />
-		</label>
+				<label>
+					<strong>React</strong>
+					<input type="checkbox" name="languages" value="REACT" />
+				</label>
 
-		<label>
-			<strong>C</strong>
-			<input type="checkbox" name="languages" value="C" />
-		</label>
+				<label>
+					<strong>Python</strong>
+					<input type="checkbox" name="languages" value="PYTHON" />
+				</label>
 
-		<label>
-			<strong>C++</strong>
-			<input type="checkbox" name="languages" value="C++" />
-		</label>
+				<label>
+					<strong>Java</strong>
+					<input type="checkbox" name="languages" value="JAVA" />
+				</label>
 
-		<label>
-			<strong>C Sharp</strong>
-			<input type="checkbox" name="languages" value="C SHARP" />
-		</label>
+				<label>
+					<strong>C</strong>
+					<input type="checkbox" name="languages" value="C" />
+				</label>
 
-		<label>
-			<strong>Ruby</strong>
-			<input type="checkbox" name="languages" value="RUBY" />
-		</label>
+				<label>
+					<strong>C++</strong>
+					<input type="checkbox" name="languages" value="C++" />
+				</label>
 
-		<label>
-			<strong>PHP</strong>
-			<input type="checkbox" name="languages" value="PHP" />
-		</label>
+				<label>
+					<strong>C Sharp</strong>
+					<input type="checkbox" name="languages" value="C SHARP" />
+				</label>
 
-		<label>
-			<strong>GO</strong>
-			<input type="checkbox" name="languages" value="GO" />
-		</label>
+				<label>
+					<strong>Ruby</strong>
+					<input type="checkbox" name="languages" value="RUBY" />
+				</label>
 
+				<label>
+					<strong>PHP</strong>
+					<input type="checkbox" name="languages" value="PHP" />
+				</label>
+
+				<label>
+					<strong>GO</strong>
+					<input type="checkbox" name="languages" value="GO" />
+				</label>
+
+			</div>
+
+			<label for="image">
+				<strong>Image</strong>
+			</label>
+			<input
+				id="input-c"
+				type="file"
+				name="image"
+				accept=".jpg, .png, .jpeg, .webp"
+			/>
+
+			<button class="btn btn-primary" type="submit">Submit</button>
+		</form>
 	</div>
-
-	<label for="image">
-		<strong>Image</strong>
-	</label>
-	<input type="file" name="image" />
-
-	<button type="submit">Submit</button>
-</form>
-
-<a href="/"><strong>Home</strong></a>
+</section>
 
 {{#if errorMessage}}
 	<p class="error">{{errorMessage}}</p>

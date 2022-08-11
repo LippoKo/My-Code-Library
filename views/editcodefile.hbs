@@ -1,3 +1,8 @@
+<nav id="header">
+	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
+	<a href="/profile"><Strong>Profile</Strong></a>
+</nav>
+
 <h1>Edit CodeFile</h1>
 
 <form action="/editcodefile/{{_id}}" method="post" enctype="multipart/form-data">
@@ -120,7 +125,7 @@
 	<label for="image">
 		<strong>Image</strong>
 	</label>
-	<input type="file" name="image" />
+	<input type="file" name="image" accept=".jpg, .png, .jpeg, .webp"/>
 	<input type="text" name="previousUrl" value="{{image}}" hidden />
 
 	<button type="submit">Submit</button>

@@ -1,20 +1,26 @@
-<h1>{{title}}</h1>
+<nav id="header">
+	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
+	<a href="/profile"><Strong>Profile</Strong></a>
+</nav>
 
-<div id="div-row">
-	{{#each snippets}}
-		<div id="codex">
-			<h2>{{this.language}}</h2>
-			<code id="card-result">{{this.code}}</code>
+<section id="section-card">
+	<div id="div-card" class="card w-96 bg-base-100 shadow-xl">
+		<figure class="px-10 pt-10">
+			<img src="{{image}}" class="rounded-xl" />
+		</figure>
+		<div class="card-body items-center text-center">
+			<h2 class="card-title">{{title}}</h2>
+			<p>{{languages}}</p>
+			<div class="card-actions">
+				<a href="/editcodefile/{{_id}}"><button
+						class="btn btn-primary"
+					>EditFile</button></a>
+				<form action="/codefile/{{_id}}/delete" method="POST">
+					<a href=""><button class="btn btn-primary">Delete</button></a>
+				</form>
+			</div>
 		</div>
-	{{/each}}
-</div>
+	</div>
+</section>
 
-<div id="image">
-	<img src="{{image}}" />
-</div>
-
-<a href="/editcodefile/{{_id}}"><strong>Edit File</strong></a>
-<form action="/codefile/{{_id}}/delete" method="POST">
-	<button>Delete</button>
-</form>
 <a href="/workspace">Workspace</a>

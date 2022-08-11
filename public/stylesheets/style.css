@@ -1,21 +1,14 @@
 /* Colors */
 :root {
-	--hue: 280;
+	--hue: ;
 
 	--base-color: hsl(var(--hue) 100% 25%);
 	--body-color: hsl(var(--hue) 80% 80%);
+	--header-color: hsl(var(--hue) 60% 90%);
 	--title-color: hsl(var(--hue) 90% 15%);
 	--text-color: hsl(0 0% 46%);
 	--background-color: hsl(0, 0%, 95%);
 	--error-color: hsl(342, 94%, 45%);
-}
-
-body {
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-	background-color: var(--body-color);
-	background-image: url("");
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 h1,
@@ -26,6 +19,7 @@ h5 {
 	display: flex;
 	justify-content: center;
 	color: var(--title-color);
+	margin: 1rem;
 }
 
 a {
@@ -38,9 +32,23 @@ a {
 	margin-top: 10px;
 }
 
-form {
-	margin: 30px auto;
-	width: 380px;
+#section-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+#link-create {
+	font-size: 30px;
+}
+
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 form label {
@@ -49,8 +57,8 @@ form label {
 	text-align: center;
 }
 
-form input,
-form button {
+#form-login input,
+#form-login button {
 	box-sizing: border-box;
 	font-size: 14px;
 	outline: 0;
@@ -59,91 +67,14 @@ form button {
 	margin-bottom: 20px;
 }
 
-form button {
-	background: var(--base-color);
-	border: 1px solid var(--base-color);
-	border-radius: 4px;
-	color: var(--background-color);
-	cursor: pointer;
-	display: inline-block;
-	font-size: 14px;
-	padding: 8px 16px;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: 0.3s ease background;
-	width: 100%;
-}
-
-form button:hover {
-	background: var(--background-color);
-	color: var(--base-color);
-	transition: 0.3s ease background;
-}
-
-ul {
-	border-bottom: 2px solid var(--base-color);
-	height: 30px;
-	padding: 1em 0;
-	list-style-type: none;
-}
-
-ul li {
-	line-height: 20px;
-}
-
-#header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border: 1px solid black;
-}
-
-#card-result {
+#input-c {
 	display: flex;
 	text-align: center;
-	font-size: 1.2rem;
-	margin: 0.5rem;
-	padding: 1rem;
-	border: 0.1rem solid var(--base-color);
+	font-size: 1rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	border: none;
 	border-radius: 0.5rem;
-	background-color: var(--background-color);
-}
-
-#codex {
-	border: 0.1rem solid var(--base-color);
-	border-radius: 0.5rem;
-	margin: 1rem;
-}
-
-#card-principal {
-	margin: 0.5rem;
-	padding: 1rem;
-	border: 0.1rem solid var(--base-color);
-	border-radius: 0.5rem;
-	background-color: var(--background-color);
-}
-
-img {
-	width: 35rem;
-	height: 20rem;
-	border: 0.1rem solid var(--base-color);
-	border-radius: 0.5rem;
-}
-
-#image {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#div-row {
-	display: flex;
-}
-
-.wrap-languages {
-	display: flex;
-	align-content: center;
-	flex-wrap: wrap;
 }
 
 .error {
@@ -156,36 +87,8 @@ img {
 	border-radius: 5px;
 }
 
-#input-l {
+.wrap-languages {
 	display: flex;
-	text-align: center;
-	font-size: 1rem;
-	font-weight: 700;
-	margin-top: 1rem;
-	border: none;
-	border-radius: 0.5rem;
-	background-color: var(--body-color);
-}
-
-#input-c {
-	display: flex;
-	text-align: center;
-	font-size: 1rem;
-	font-weight: 700;
-	margin-top: 1rem;
-	border: none;
-	border-radius: 0.5rem;
-	background-color: var(--background-color);
-}
-
-#card-code {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 1rem;
-}
-
-textarea {
-	border: none;
-	border-radius: 0.2rem;
-	background-color: var(--background-color);
+	align-content: center;
+	flex-wrap: wrap;
 }

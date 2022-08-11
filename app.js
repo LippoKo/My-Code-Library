@@ -56,6 +56,9 @@ app.use("/", editRoutes);
 const profileRoutes = require("./routes/profile.routes");
 app.use("/", profileRoutes);
 
+const editprofileRoutes = require("./routes/editprofile.routes");
+app.use("/", editprofileRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

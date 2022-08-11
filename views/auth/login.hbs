@@ -1,19 +1,28 @@
 <h1>
-	Login
+	<strong>Login</strong>
 </h1>
 
-<form action="/auth/login" method="POST">
-	<label>
-		Username
-		<input type="text" name="username" />
-	</label>
-	<label>
-		Password
-		<input type="password" name="password" />
-	</label>
+<section id="section-card">
+	<div class="card w-96 glass">
 
-	<button type="submit">Submit</button>
-</form>
+		<div class="card-body">
+			<form id="form-login" action="/auth/login" method="POST">
+				<label>
+					Username
+					<input id="input-c" type="text" name="username" />
+				</label>
+				<label>
+					Password
+					<input id="input-c" type="password" name="password" />
+				</label>
+
+				<div class="card-actions justify-end">
+					<button class="btn btn-primary" type="submit">Login</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
 
 <a href="/"><strong>Home</strong></a>
 

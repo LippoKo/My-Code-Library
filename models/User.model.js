@@ -29,6 +29,7 @@ const userSchema = new Schema(
 			type: String,
 			//default: "../public/images/site_cleanup.jpg",
 		},
+		codes: [{ type: Schema.Types.ObjectId, ref: "CodeFile" }],
 	},
 	{
 		timestamps: true,

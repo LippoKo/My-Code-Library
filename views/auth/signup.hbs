@@ -1,38 +1,58 @@
 <h1>
-	SignUp
+	<strong>SignUp</strong>
 </h1>
 
-<form action="/auth/signup" method="POST" enctype="multipart/form-data">
-	<label>
-		Username
-		<input id="input-c" type="text" name="username" />
-	</label>
+<section id="section-card">
+	<div class="card w-96 glass">
 
-	<label>
-		Email
-		<input id="input-c" type="text" name="email" />
-	</label>
+		<div class="card-body">
+			<form
+				id="form-login"
+				action="/auth/signup"
+				method="POST"
+				enctype="multipart/form-data"
+			>
+				<label>
+					Username
+					<input id="input-c" type="text" name="username" />
+				</label>
 
-	<label>
-		Password
-		<input id="input-c" type="password" name="password" />
-	</label>
+				<label>
+					Email
+					<input id="input-c" type="text" name="email" />
+				</label>
 
-	<label>
-		Profession
-		<input id="input-c" type="text" name="profession" />
-	</label>
-	<label>
-		Interests
-		<input id="input-c" type="text" name="interests" />
-	</label>
-	<label>
-		Image
-		<input id="input-c" type="file" name="image" />
-	</label>
+				<label>
+					Password
+					<input id="input-c" type="password" name="password" />
+				</label>
 
-	<button type="submit">Submit</button>
-</form>
+				<label>
+					Profession
+					<input id="input-c" type="text" name="profession" />
+				</label>
+				<label>
+					Interests
+					<input id="input-c" type="text" name="interests" />
+				</label>
+				<label>
+					Image
+					<input
+						id="input-c"
+						type="file"
+						name="image"
+						accept=".jpg, .png, .jpeg, .webp"
+					/>
+				</label>
+
+				<div class="card-actions justify-end">
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</section>
 
 <a href="/auth/login"><strong>Login</strong></a>
 <a href="/"><strong>Home</strong></a>

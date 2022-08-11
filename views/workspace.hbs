@@ -1,13 +1,23 @@
 <nav id="header">
-	<a href="/codeFile"><Strong>Create CodeFile</Strong></a>
-	<a href="/profile/{{_id}}"><Strong>Profile</Strong></a>
+	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
+	<a href="/profile"><Strong>Profile</Strong></a>
 </nav>
 
-{{#each codefile}}
-	<div id="card-principal">
-		<a href="/codefile/{{_id}}">{{title}}</a>
-		<p>{{languages}}</p>
-		<p>{{snippets}}</p>
-		<p>{{image}}</p>
-	</div>
+{{#each codes}}
+	<section id="section-card">
+		<div id="div-card" class="card w-96 bg-base-100 shadow-xl">
+			<figure class="px-10 pt-10">
+				<img src="{{this.image}}" class="rounded-xl" />
+			</figure>
+			<div class="card-body items-center text-center">
+				<h2 class="card-title">{{title}}</h2>
+				<p>{{languages}}</p>
+				<div class="card-actions">
+					<a href="/codefile/{{_id}}"><button
+							class="btn btn-primary"
+						>Open</button></a>
+				</div>
+			</div>
+		</div>
+	</section>
 {{/each}}

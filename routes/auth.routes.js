@@ -2,6 +2,7 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
+const fileUploader = require("../config/cloudinary.config");
 
 // Models
 const User = require("../models/User.model");
@@ -22,59 +23,73 @@ router.get("/signup", isLoggedOut, (req, res, next) => {
 	res.render("auth/signup");
 });
 
-router.post("/signup", isLoggedOut, (req, res, next) => {
-	const { username, email, password, profession, interests, image } = req.body;
+router.post(
+	"/signup",
+	fileUploader.single("image"),
+	isLoggedOut,
+	(req, res, next) => {
+		const { username, email, password, profession, interests } = req.body;
 
-	if (!username || !email || !password) {
-		res.render("auth/signup", {
-			errorMessage:
-				"All fields are mandatory. Please provide your username, email and password.",
-		});
-		return;
-	}
+		let image;
 
-	// Create a User
-	bcrypt
-		.genSalt(saltRounds)
-		.then((salt) => bcrypt.hash(password, salt))
-		.then((hashedPassword) => {
-			return User.create({
-				username,
-				email,
-				password: hashedPassword,
-				profession,
-				interests,
-				image,
+		if (req.file) {
+			image = req.file.path;
+		} else {
+			image =
+				"https://i.kym-cdn.com/entries/icons/facebook/000/002/232/bullet_cat.jpg";
+		}
+
+		if (!username || !email || !password) {
+			res.render("auth/signup", {
+				errorMessage:
+					"All fields are mandatory. Please provide your username, email and password.",
 			});
-		})
-		.then(() => res.redirect("/auth/login"))
-		.catch((err) => {
-			if (err instanceof mongoose.Error.ValidationError) {
-				console.log(err);
-				res.status(500).render("auth/signup", { errorMessage: err.message });
-			} else if (err.code === 11000) {
-				console.log(err);
-				res.status(500).render("auth/signup", {
-					errorMessage:
-						"Please provide a unique username or email. The one you chose is already taken.",
+			return;
+		}
+
+		// Create a User
+		bcrypt
+			.genSalt(saltRounds)
+			.then((salt) => bcrypt.hash(password, salt))
+			.then((hashedPassword) => {
+				return User.create({
+					username,
+					email,
+					password: hashedPassword,
+					profession,
+					interests,
+					image,
 				});
-			} else {
-				next(err);
-			}
-		});
+			})
+			.then(() => res.redirect("/auth/login"))
+			.catch((err) => {
+				if (err instanceof mongoose.Error.ValidationError) {
+					console.log(err);
+					res.status(500).render("auth/signup", { errorMessage: err.message });
+				} else if (err.code === 11000) {
+					console.log(err);
+					res.status(500).render("auth/signup", {
+						errorMessage:
+							"Please provide a unique username or email. The one you chose is already taken.",
+					});
+				} else {
+					next(err);
+				}
+			});
 
-	if (!username) {
-		return res.status(400).render("auth/signup", {
-			errorMessage: "Please provide your username.",
-		});
-	}
+		if (!username) {
+			return res.status(400).render("auth/signup", {
+				errorMessage: "Please provide your username.",
+			});
+		}
 
-	if (password.length < 8) {
-		return res.status(400).render("auth/signup", {
-			errorMessage: "Your password needs to be at least 8 characters long.",
-		});
+		if (password.length < 8) {
+			return res.status(400).render("auth/signup", {
+				errorMessage: "Your password needs to be at least 8 characters long.",
+			});
+		}
 	}
-});
+);
 
 // Login Route
 router.get("/login", isLoggedOut, (req, res, next) => {

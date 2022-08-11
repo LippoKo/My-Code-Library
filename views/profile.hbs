@@ -1,2 +1,13 @@
-<h3>{{username}}</h3>
-<p>{{email}}</p>
+<nav id="header">
+	<a href="/workspace"><strong>WorkSpace</strong></a>
+<a href="/editprofile/{{_id}}"><strong>Edit Profile</strong></a>
+<a href="/auth/logout"><strong>Logout</strong></a>
+</nav>
+
+<div id="profile-header">
+  <h3>{{username}}</h3>
+<img src="{{image}}">
+</div>
+<h5>Email: {{email}}<h5/>
+<h5>Profession: {{profession}}<h5/>
+<h5>Interests: {{interests}}<h5/>
