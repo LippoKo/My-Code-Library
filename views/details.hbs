@@ -1,6 +1,15 @@
 <nav id="header">
-	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
-	<a href="/profile"><Strong>Profile</Strong></a>
+	<div class="avatar">
+		<div
+			id="nav-plus"
+			class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+		>
+			<a href="/codeFile"><img
+					src="https://freepikpsd.com/file/2019/10/white-plus-sign-png-3-Transparent-Images.png"
+				/></a>
+		</div>
+	</div>
+	<button class="btn"><a href="/workspace">WorkSpace</a></button>
 </nav>
 
 <section id="section-card">
@@ -9,8 +18,17 @@
 			<img src="{{image}}" class="rounded-xl" />
 		</figure>
 		<div class="card-body items-center text-center">
-			<h2 class="card-title">{{title}}</h2>
-			<p>{{languages}}</p>
+			<div id="div-card" class="card w-96 bg-base-100 shadow-xl">
+				<h2 class="card-title">{{title}}</h2>
+			</div>
+			{{#each snippets}}
+				<div id="div-card" class="card w-96 bg-base-100 shadow-xl">
+					<h3 class="card-title">{{language}}</h3>
+					<div id="code-box">
+						<pre><code>{{code}}</code></pre>
+					</div>
+				</div>
+			{{/each}}
 			<div class="card-actions">
 				<a href="/editcodefile/{{_id}}"><button
 						class="btn btn-primary"
@@ -20,7 +38,8 @@
 				</form>
 			</div>
 		</div>
+		{{#if errorMessage}}
+			<p class="error">{{errorMessage}}</p>
+		{{/if}}
 	</div>
 </section>
-
-<a href="/workspace">Workspace</a>

@@ -1,18 +1,47 @@
-<nav id="header">
-	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
-	<a href="/profile"><Strong>Profile</Strong></a>
+<nav>
+	<div id="nav-center">
+		<button class="btn"><a href="/workspace">WorkSpace</a></button>
+	</div>
 </nav>
 
-<form action="/editcompile/{{_id}}" method="POST">
+<h1 class="card-title">
+	{{title}}
+</h1>
 
-	{{#each snippets}}
-		<div id="input-l">
-			<input id="input-l" name="language" value="{{this.language}}" readonly />
-		</div>
-		<div id="card-code">
-			<textarea name="code" cols="40" rows="12">{{this.code}}</textarea>
-		</div>
-	{{/each}}
+<section id="section-card">
+	<div class="card w-96 bg-base-100 shadow-xl">
+		<div class="card-body items-center text-center">
+			<div class="carousel carousel-center">
+				<div class="carousel-item">
+					<form id="form-login" action="/editcompile/{{_id}}" method="POST">
 
-	<button type="submit">Submit</button>
-</form>
+						{{#each snippets}}
+							<div id="input-l">
+								<input
+									id="input-l"
+									name="language"
+									value="{{this.language}}"
+									readonly
+								/>
+							</div>
+							<div>
+								<textarea
+									id="card-code"
+									name="code"
+									cols="40"
+									rows="12"
+								>{{this.code}}</textarea>
+							</div>
+						{{/each}}
+						<div class="card-actions">
+							<button class="btn btn-primary" type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		{{#if errorMessage}}
+			<p class="error">{{errorMessage}}</p>
+		{{/if}}
+	</div>
+</section>

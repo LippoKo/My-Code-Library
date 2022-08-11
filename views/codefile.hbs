@@ -1,6 +1,7 @@
-<nav id="header">
-	<a href="/workspace"><strong>Workspace</strong></a>
-	<a href="/profile"><Strong>Profile</Strong></a>
+<nav>
+	<div id="nav-center">
+		<button class="btn"><a href="/workspace">WorkSpace</a></button>
+	</div>
 </nav>
 
 <section id="section-card">
@@ -12,12 +13,12 @@
 			method="POST"
 			enctype="multipart/form-data"
 		>
-			<h2>Title</h2>
+			<h2 class="card-title">Title</h2>
 			<label>
 				<input id="input-c" type="text" name="title" />
 			</label>
 
-			<h2>Programming Languages</h2>
+			<h2 class="card-title">Programming Languages</h2>
 			<div class="wrap-languages">
 				<label>
 					<strong>HTML</strong>
@@ -98,9 +99,8 @@
 
 			<button class="btn btn-primary" type="submit">Submit</button>
 		</form>
+		{{#if errorMessage}}
+			<p class="error">{{errorMessage}}</p>
+		{{/if}}
 	</div>
 </section>
-
-{{#if errorMessage}}
-	<p class="error">{{errorMessage}}</p>
-{{/if}}

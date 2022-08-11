@@ -25,7 +25,7 @@ router.post(
 				image = req.file.path;
 			} else {
 				image =
-					"https://i.kym-cdn.com/entries/icons/facebook/000/002/232/bullet_cat.jpg";
+					"https://i.pcmag.com/imagery/roundups/07tAycb2jrO6jKSb5RsGUFq-1..v1569492641.jpg";
 			}
 
 			if (!languages || !title) {

@@ -1,17 +1,28 @@
-<h1>
+{{! criaçao de codigo dentro de snippets }}
+
+<h1 class="card-title">
 	{{title}}
 </h1>
+<section id="section-card">
+	<div class="card w-96 bg-base-100 shadow-xl">
+		<div class="card-body items-center text-center">
+			<form id="form-login" action="/compile/{{id}}" method="POST">
 
-<form action="/compile/{{id}}" method="POST">
-
-	{{#each languages}}
-		<div id="input-l">
-			<input id="input-l" name="language" value="{{this}}" readonly />
+				{{#each languages}}
+					<div id="input-l">
+						<input id="input-l" name="language" value="{{this}}" readonly />
+					</div>
+					<div>
+						<textarea id="card-code" name="code" cols="40" rows="12"></textarea>
+					</div>
+				{{/each}}
+				<div class="card-actions">
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</div>
+			</form>
 		</div>
-		<div id="card-code">
-			<textarea name="code" cols="40" rows="12"></textarea>
-		</div>
-	{{/each}}
-
-	<button type="submit">Submit</button>
-</form>
+		{{#if errorMessage}}
+			<p class="error">{{errorMessage}}</p>
+		{{/if}}
+	</div>
+</section>

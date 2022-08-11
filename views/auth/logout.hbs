@@ -1,11 +1,11 @@
-<nav id="header">
-	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
-	<a href="/profile"><Strong>Profile</Strong></a>
-</nav>
+<nav>
 
-<form action="/auth/logout" method="POST">
-	<button>Logout</button>
-</form>
+	<h2>See you soon!</h2>
+
+	<form id="form-login" action="/auth/logout" method="POST">
+		<button class="btn btn-primary">Logout</button>
+	</form>
+</nav>
 
 {{#if errorMessage}}
 	<p class="error">{{errorMessage}}</p>

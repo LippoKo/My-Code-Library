@@ -1,9 +1,27 @@
 <nav id="header">
-	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
-	<a href="/profile"><Strong>Profile</Strong></a>
+	<div class="avatar">
+		<div
+			id="nav-plus"
+			class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+		>
+			<a href="/codeFile"><img
+					src="https://freepikpsd.com/file/2019/10/white-plus-sign-png-3-Transparent-Images.png"
+				/></a>
+		</div>
+	</div>
+	<h2 class="card-title">Hello, {{username}}!</h2>
+	<div class="avatar">
+		<div id="nav-picture" class="w-24 mask mask-squircle">
+			<a href="/profile"><img src="{{image}}" /></a>
+		</div>
+	</div>
 </nav>
 
-{{#each codes}}
+<div
+	class="carousel carousel-center"
+>
+<div class="carousel-item">
+		{{#each codes}}
 	<section id="section-card">
 		<div id="div-card" class="card w-96 bg-base-100 shadow-xl">
 			<figure class="px-10 pt-10">
@@ -21,3 +39,8 @@
 		</div>
 	</section>
 {{/each}}
+</div>
+
+{{#if errorMessage}}
+	<p class="error">{{errorMessage}}</p>
+{{/if}}

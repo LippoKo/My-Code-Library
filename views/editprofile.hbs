@@ -1,30 +1,64 @@
-<h1>
+<h1 class="card-title">
 	Edit Profile
 </h1>
 
-<form action="/editprofile/{{_id}}" method="POST" enctype="multipart/form-data">
-	<label>
-		Username
-		<input id="input-c" type="text" name="username" value="{{username}}" />
-	</label>
+<section id="section-card">
+	<div class="card w-96 glass">
 
-	<label>
-		Profession
-		<input id="input-c" type="text" name="profession" value="{{profession}}" />
-	</label>
-	<label>
-		Interests
-		<input id="input-c" type="text" name="interests" value="{{interests}}" />
-	</label>
-	<label>
-		Image
-		<input
-			id="input-c"
-			type="file"
-			name="image"
-			accept=".jpg, .png, .jpeg, .webp"
-		/>
-	</label>
+		<div class="card-body">
+			<form
+				id="form-login"
+				action="/editprofile/{{_id}}"
+				method="POST"
+				enctype="multipart/form-data"
+			>
+				<label>
+					Username
+					<input
+						id="input-c"
+						type="text"
+						name="username"
+						value="{{username}}"
+					/>
+				</label>
 
-	<button type="submit">Submit</button>
-</form>
+				<label>
+					Profession
+					<input
+						id="input-c"
+						type="text"
+						name="profession"
+						value="{{profession}}"
+					/>
+				</label>
+				<label>
+					Interests
+					<input
+						id="input-c"
+						type="text"
+						name="interests"
+						value="{{interests}}"
+					/>
+				</label>
+				<label>
+					Image
+					<input
+						id="input-c"
+						type="file"
+						name="image"
+						accept=".jpg, .png, .jpeg, .webp"
+					/>
+				</label>
+
+				<div class="card-actions justify-end">
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</div>
+
+			</form>
+
+		</div>
+		{{#if errorMessage}}
+			<p class="error">{{errorMessage}}</p>
+		{{/if}}
+	</div>
+</section>

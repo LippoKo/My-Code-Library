@@ -1,13 +1,19 @@
 <nav id="header">
-	<a href="/workspace"><strong>WorkSpace</strong></a>
-<a href="/editprofile/{{_id}}"><strong>Edit Profile</strong></a>
-<a href="/auth/logout"><strong>Logout</strong></a>
+	<button class="btn"><a href="/workspace">WorkSpace</a></button>
+	<button class="btn"><a href="/editprofile/{{_id}}">Edit Profile</a></button>
+	<button class="btn"><a href="/auth/logout">Logout</a></button>
 </nav>
 
-<div id="profile-header">
-  <h3>{{username}}</h3>
-<img src="{{image}}">
-</div>
-<h5>Email: {{email}}<h5/>
-<h5>Profession: {{profession}}<h5/>
-<h5>Interests: {{interests}}<h5/>
+<section id="section-profile">
+	<div class="avatar">
+		<div class="mask mask-squircle">
+			<img src="{{image}}" />
+		</div>
+	</div>
+	<div id="profile-header">
+		<h3 class="card-title">{{username}}</h3>
+		<p>Email: <i> {{email}}</i></p>
+		<p>Profession: <i> {{profession}}</i></p>
+		<p>Interests: <i> {{interests}}</i></p>
+	</div>
+</section>

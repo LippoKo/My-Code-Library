@@ -7,6 +7,7 @@ router.get("/compile/:id", isLoggedIn, (req, res, next) => {
 	const { id } = req.params;
 	CodeFile.findById(id)
 		.then((codefile) => {
+			console.log(codefile);
 			res.render("compile", codefile);
 		})
 		.catch((err) => next(err));

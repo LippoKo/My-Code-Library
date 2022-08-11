@@ -43,7 +43,6 @@ router.post(
 
 			let newSnippets = languages.map((el) => {
 				if (codeFile.languages.includes(el)) {
-					console.log(codeFi);
 					return codeFile.snippets.find((val) => val.language === el);
 				} else {
 					return { language: el, code: " " };
@@ -75,6 +74,7 @@ router.get("/editcompile/:id", isLoggedIn, (req, res, next) => {
 
 	CodeFile.findById(id)
 		.then((codeFile) => {
+			console.log(codeFile);
 			res.render("editcompile", codeFile);
 		})
 		.catch((err) => next(err));

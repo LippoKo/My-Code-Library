@@ -15,21 +15,18 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+p {
 	display: flex;
 	justify-content: center;
 	color: var(--title-color);
 	margin: 1rem;
+	padding: 20px;
 }
 
-a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--base-color);
-	text-decoration: none;
-	font-size: 1.5em;
-	margin-top: 10px;
+img {
+	max-width: 304px;
+	max-height: 171px;
 }
 
 #section-card {
@@ -37,6 +34,21 @@ a {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 1rem;
+}
+
+#section-profile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 3rem;
+}
+
+#section-index {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 4rem;
 }
 
 #link-create {
@@ -49,6 +61,12 @@ a {
 	align-items: center;
 	margin-left: 1rem;
 	margin-right: 1rem;
+	padding-top: 10px;
+}
+
+#profile-header {
+	display: flex;
+	flex-direction: column;
 }
 
 form label {
@@ -77,6 +95,17 @@ form label {
 	border-radius: 0.5rem;
 }
 
+#input-l {
+	display: flex;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--body-color);
+}
+
 .error {
 	background: var(--error-color);
 	box-sizing: border-box;
@@ -91,4 +120,33 @@ form label {
 	display: flex;
 	align-content: center;
 	flex-wrap: wrap;
+}
+
+#nav-picture {
+	max-width: 30px;
+	max-height: 30px;
+}
+
+#nav-plus {
+	max-width: 25px;
+	max-height: 25px;
+}
+
+#nav-center {
+	display: flex;
+	justify-content: center;
+}
+
+#card-code {
+	display: flex;
+	justify-content: center;
+	border-radius: 0.5rem;
+	padding: 10px;
+	margin-bottom: 1rem;
+	background-color: var(--background-color);
+}
+
+#code-box {
+	background-color: var(--background-color);
+	border-radius: 0.5rem;
 }

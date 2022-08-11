@@ -1,12 +1,21 @@
-<nav id="header">
-	<a id="link-create" href="/codeFile"><Strong>+</Strong></a>
-	<a href="/profile"><Strong>Profile</Strong></a>
+<nav>
+	<div id="nav-center">
+	<button class="btn"><a href="/workspace">WorkSpace</a></button>
+	</div>
 </nav>
 
 <h1>Edit CodeFile</h1>
 
-<form action="/editcodefile/{{_id}}" method="post" enctype="multipart/form-data">
-  <h2>Title</h2>
+<section id="section-card">
+	<div class="artboard phone-5">
+
+		<form
+			id="form-login"
+			action="/editcodefile/{{_id}}"
+			method="POST"
+			enctype="multipart/form-data"
+		>
+			<h2>Title</h2>
 	<label>
 		<input id="input-c" type="text" name="title" value="{{title}}" />
 	</label>
@@ -125,8 +134,12 @@
 	<label for="image">
 		<strong>Image</strong>
 	</label>
-	<input type="file" name="image" accept=".jpg, .png, .jpeg, .webp"/>
+	<input id="input-c" type="file" name="image" accept=".jpg, .png, .jpeg, .webp"/>
 	<input type="text" name="previousUrl" value="{{image}}" hidden />
-
-	<button type="submit">Submit</button>
-</form>
+			<button class="btn btn-primary" type="submit">Submit</button>
+		</form>
+{{#if errorMessage}}
+	<p class="error">{{errorMessage}}</p>
+{{/if}}
+	</div>
+</section>
