@@ -1,61 +1,63 @@
-<h1>
-	<strong>SignUp</strong>
-</h1>
+<body id="body-index">
+	<h1 class="card-title">
+		<strong>SignUp</strong>
+	</h1>
 
-<section id="section-card">
-	<div class="card w-96 glass">
+	<section id="section-card">
+		<div class="card w-96 glass">
 
-		<div class="card-body">
-			<form
-				id="form-login"
-				action="/auth/signup"
-				method="POST"
-				enctype="multipart/form-data"
-			>
-				<label>
-					Username
-					<input id="input-c" type="text" name="username" />
-				</label>
+			<div class="card-body">
+				<form
+					id="form-login"
+					action="/auth/signup"
+					method="POST"
+					enctype="multipart/form-data"
+				>
+					<label>
+						Username:
+						<input id="input-c" type="text" name="username" />
+					</label>
 
-				<label>
-					Email
-					<input id="input-c" type="text" name="email" />
-				</label>
+					<label>
+						Email:
+						<input id="input-c" type="text" name="email" />
+					</label>
 
-				<label>
-					Password
-					<input id="input-c" type="password" name="password" />
-				</label>
+					<label>
+						Password:
+						<input id="input-c" type="password" name="password" />
+					</label>
 
-				<label>
-					Profession
-					<input id="input-c" type="text" name="profession" />
-				</label>
-				<label>
-					Interests
-					<input id="input-c" type="text" name="interests" />
-				</label>
-				<label>
-					Image
-					<input
-						id="input-c"
-						type="file"
-						name="image"
-						accept=".jpg, .png, .jpeg, .webp"
-					/>
-				</label>
+					<label>
+						Profession:
+						<input id="input-c" type="text" name="profession" />
+					</label>
+					<label>
+						Interests:
+						<input id="input-c" type="text" name="interests" />
+					</label>
+					<label>
+						Image:
+						<input
+							id="input-c"
+							type="file"
+							name="image"
+							accept=".jpg, .png, .jpeg, .webp"
+						/>
+					</label>
 
-				<div class="card-actions justify-end">
-					<button class="btn btn-primary" type="submit">Submit</button>
-				</div>
-			</form>
+					<div class="card-actions justify-end">
+						<button class="btn btn-secondary" type="submit">Submit</button>
+					</div>
+				</form>
 
-			<button class="btn"><a href="/auth/login">Login</a></button>
-			<button class="btn"><a href="/">Home</a></button>
+				<button class="btn btn-primary"><a href="/auth/login">Login</a></button>
+				<button class="btn"><a href="/">Home</a></button>
+			</div>
+			{{#if errorMessage}}
+				<p class="error">{{errorMessage}}</p>
+			{{/if}}
 		</div>
-	</div>
-</section>
+	</section>
 
-{{#if errorMessage}}
-	<p class="error">{{errorMessage}}</p>
-{{/if}}
+</body>

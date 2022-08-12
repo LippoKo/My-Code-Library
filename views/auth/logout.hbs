@@ -1,12 +1,14 @@
-<nav>
+<body id="logout">
+	<nav class="card w-96 bg-base-100 shadow-xl">
 
-	<h2>See you soon!</h2>
+		<h2 class="card-title">See you soon!</h2>
 
-	<form id="form-login" action="/auth/logout" method="POST">
-		<button class="btn btn-primary">Logout</button>
-	</form>
-</nav>
+		<form id="form-login" action="/auth/logout" method="POST">
+			<button class="btn btn-primary">Logout</button>
+		</form>
+	</nav>
 
-{{#if errorMessage}}
-	<p class="error">{{errorMessage}}</p>
-{{/if}}
+	{{#if errorMessage}}
+		<p class="error">{{errorMessage}}</p>
+	{{/if}}
+</body>

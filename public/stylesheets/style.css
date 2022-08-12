@@ -1,12 +1,13 @@
 /* Colors */
 :root {
-	--hue: ;
+	--hue: 100;
 
 	--base-color: hsl(var(--hue) 100% 25%);
 	--body-color: hsl(var(--hue) 80% 80%);
 	--header-color: hsl(var(--hue) 60% 90%);
-	--title-color: hsl(var(--hue) 90% 15%);
-	--text-color: hsl(0 0% 46%);
+	--title-color: hsl(var(--hue) 90% 40%);
+	--text-color: hsl(0, 0%, 40%);
+	--code-color: hsl(0, 4%, 10%);
 	--background-color: hsl(0, 0%, 95%);
 	--error-color: hsl(342, 94%, 45%);
 }
@@ -22,6 +23,11 @@ p {
 	color: var(--title-color);
 	margin: 1rem;
 	padding: 20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#body-index {
+	background-color: var(--body-color);
 }
 
 img {
@@ -69,6 +75,11 @@ img {
 	flex-direction: column;
 }
 
+#logo {
+	min-width: 300px;
+	min-height: 300px;
+}
+
 form label {
 	color: var(--text-color);
 	margin-bottom: 10px;
@@ -79,6 +90,7 @@ form label {
 #form-login button {
 	box-sizing: border-box;
 	font-size: 14px;
+	color: var(--text-color);
 	outline: 0;
 	padding: 4px;
 	width: 100%;
@@ -143,10 +155,18 @@ form label {
 	border-radius: 0.5rem;
 	padding: 10px;
 	margin-bottom: 1rem;
+	color: var(--text-color);
 	background-color: var(--background-color);
 }
 
 #code-box {
 	background-color: var(--background-color);
 	border-radius: 0.5rem;
+	color: var(--code-color);
+}
+
+#logout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

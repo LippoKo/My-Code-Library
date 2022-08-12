@@ -1,64 +1,66 @@
-<h1 class="card-title">
-	Edit Profile
-</h1>
+<body id="body-index">
+	<h1 class="card-title">
+		Edit Profile
+	</h1>
 
-<section id="section-card">
-	<div class="card w-96 glass">
+	<section id="section-card">
+		<div class="card w-96 glass">
 
-		<div class="card-body">
-			<form
-				id="form-login"
-				action="/editprofile/{{_id}}"
-				method="POST"
-				enctype="multipart/form-data"
-			>
-				<label>
-					Username
-					<input
-						id="input-c"
-						type="text"
-						name="username"
-						value="{{username}}"
-					/>
-				</label>
+			<div class="card-body">
+				<form
+					id="form-login"
+					action="/editprofile/{{_id}}"
+					method="POST"
+					enctype="multipart/form-data"
+				>
+					<label>
+						Username:
+						<input
+							id="input-c"
+							type="text"
+							name="username"
+							value="{{username}}"
+						/>
+					</label>
 
-				<label>
-					Profession
-					<input
-						id="input-c"
-						type="text"
-						name="profession"
-						value="{{profession}}"
-					/>
-				</label>
-				<label>
-					Interests
-					<input
-						id="input-c"
-						type="text"
-						name="interests"
-						value="{{interests}}"
-					/>
-				</label>
-				<label>
-					Image
-					<input
-						id="input-c"
-						type="file"
-						name="image"
-						accept=".jpg, .png, .jpeg, .webp"
-					/>
-				</label>
+					<label>
+						Profession:
+						<input
+							id="input-c"
+							type="text"
+							name="profession"
+							value="{{profession}}"
+						/>
+					</label>
+					<label>
+						Interests:
+						<input
+							id="input-c"
+							type="text"
+							name="interests"
+							value="{{interests}}"
+						/>
+					</label>
+					<label>
+						Image:
+						<input
+							id="input-c"
+							type="file"
+							name="image"
+							accept=".jpg, .png, .jpeg, .webp"
+						/>
+					</label>
 
-				<div class="card-actions justify-end">
-					<button class="btn btn-primary" type="submit">Submit</button>
-				</div>
+					<div class="card-actions justify-end">
+						<button class="btn btn-secondary" type="submit">Submit</button>
+					</div>
 
-			</form>
+				</form>
 
+			</div>
+			{{#if errorMessage}}
+				<p class="error">{{errorMessage}}</p>
+			{{/if}}
 		</div>
-		{{#if errorMessage}}
-			<p class="error">{{errorMessage}}</p>
-		{{/if}}
-	</div>
-</section>
+	</section>
+</body>
