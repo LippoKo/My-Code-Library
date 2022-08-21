@@ -1,9 +1,14 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
 /* Colors */
 :root {
-	--hue: 100;
+	--hue: 180;
 
 	--base-color: hsl(var(--hue) 100% 25%);
-	--body-color: hsl(var(--hue) 80% 80%);
+	--body-color: hsl(var(--hue) 80% 60%);
 	--header-color: hsl(var(--hue) 60% 90%);
 	--title-color: hsl(var(--hue) 90% 40%);
 	--text-color: hsl(0, 0%, 40%);
@@ -22,7 +27,7 @@ p {
 	justify-content: center;
 	color: var(--title-color);
 	margin: 1rem;
-	padding: 20px;
+	padding: 15px;
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 

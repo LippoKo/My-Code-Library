@@ -6,8 +6,6 @@ const fileUploader = require("../config/cloudinary.config");
 
 // Models
 const User = require("../models/User.model");
-//const CodeFile = require("../models/CodeFile.model");
-//const Compile = require("../models/Compile.model");
 
 // Rounds to bcrypt run the salt
 const saltRounds = 10;
